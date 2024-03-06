@@ -1,11 +1,26 @@
 {
+	"$schema": "https://json.schemastore.org/tsconfig",
+	"display": "Opus",
 	"extends": "expo/tsconfig.base",
 	"compilerOptions": {
 		"strict": true,
+		"noUncheckedIndexedAccess": true,
+		"isolatedModules": true,
+		"resolveJsonModule": true,
+		"baseUrl": ".",
 		"paths": {
 			"~/*": ["./src/*"]
 		},
-		"types": ["nativewind/types"]
+		"types": ["nativewind/types", "node"]
 	},
-	"include": ["**/*.ts", "**/*.tsx", ".expo/types/**/*.ts", "expo-env.d.ts"]
+	"include": [
+		"expo-plugins",
+		"**/*.ts",
+		"**/*.tsx",
+		"**/*.js",
+		"**/*.jsx",
+		".expo/types/**/*.ts",
+		"expo-env.d.ts",
+	],
+	"exclude": ["node_modules", ".expo"]
 }
